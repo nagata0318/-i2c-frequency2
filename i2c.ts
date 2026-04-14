@@ -2,17 +2,16 @@
 namespace I2CEx {
 
     /**
-     * I2C周波数を設定
+     * I2C周波数設定
      */
     //% block="I2C周波数を %hz Hz に設定"
-    //% shim=I2CEx::_setFrequency
     export function setFrequency(hz: number): void {
+        _setFrequency(hz)
     }
 
-    export enum I2CFreq {
-        //% block="100kHz"
-        F100K = 100000,
-        //% block="400kHz"
-        F400K = 400000
+    // shim関数（これが重要）
+    //% shim=I2CEx::_setFrequency
+    function _setFrequency(hz: number): void {
+        return
     }
 }
